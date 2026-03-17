@@ -8,6 +8,9 @@
 #include <linux/capability.h>
 #include <linux/ratelimit.h>
 #include "internal.h"
+#if IS_ENABLED(CONFIG_USB)
+#include <linux/usb.h>
+#endif
 
 static const int ten_thousand = 10000;
 
