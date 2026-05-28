@@ -418,6 +418,8 @@ void mmc_remove_card(struct mmc_card *card)
 			pr_info("%s: card %04x removed\n",
 				mmc_hostname(card->host), card->rca);
 		}
+
+		panic("mmc: card removed from %s\n", mmc_hostname(card->host));
 		device_del(&card->dev);
 		of_node_put(card->dev.of_node);
 	}
